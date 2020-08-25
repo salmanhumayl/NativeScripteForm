@@ -1,0 +1,138 @@
+<ActionBar>
+    <!--
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton title="dsdsad" android.systemIcon="ic_menu_back" (tap)="goBack()" ></NavigationButton>
+
+   <!--  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    --> <!--
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <!-- <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem> -->
+    <Label text="{{'Employee No :' +model.EmpNo}}" class="titleheading" ></Label>
+
+</ActionBar>
+
+
+<FlexboxLayout flexDirection="column" style="background-color: white;">
+
+    <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h2 m-15" text={{model.EmployeesName}}></Label>
+     </FlexboxLayout>
+         <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h3 m-15" text={{model.Project}}></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h3 m-15" text={{model.LeaveType}}></Label>
+            <Label class="h3 m-15" text="Days Applied"></Label>
+            <Label class="h3 m-15" text={{model.totalDays}}></Label>
+
+        </FlexboxLayout>
+         <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="From"></Label>
+            <Label class="h4 m-15" [text]="model.LeaveFrom | date:'dd/MMM/yyyy'"></Label>
+            <Label class="h4 m-15" text="Until"></Label>
+            <Label class="h4 m-15" [text]="model.UntilDay | date:'dd/MMM/yyyy'"></Label>
+
+         </FlexboxLayout>
+         <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="Last Day"></Label>
+            <Label class="h4 m-15" [text]="model.LastDay | date:'dd/MMM/yyyy'" ></Label>
+            <Label class="h4 m-15" text="Exp.Day"></Label>
+            <Label class="h4 m-15" [text]="model.ExpectedDay | date:'dd/MMM/yyyy'"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="Address During Leave"></Label>
+            <Label class="h4 m-15" [text]="model.AddressLeave" ></Label>
+
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="Travel-From"></Label>
+            <Label class="h4 m-15" [text]="model.FromDate"  ></Label>
+            <Label class="h4 m-15" text="Travel To"></Label>
+            <Label class="h4 m-15" [text]="model.ToDate"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="Travel Detail"></Label>
+            <Label class="h4 m-15" [text]="model.Traveldetail" ></Label>
+
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row" style="background-color: white;">
+            <Label class="h4 m-15" text="Ticket required"></Label>
+            <Label class="h4 m-15" [text]="model.strTicketRequired" ></Label>
+            <Label class="h4 m-15" text="Company Ticket"></Label>
+            <Label class="h4 m-15" [text]="model.strCompanyTicket"></Label>
+        </FlexboxLayout>
+
+        <StackLayout>
+                <StackLayout >
+                    <Label class="input"
+                    text={{title}}></Label>
+
+                </StackLayout>
+
+                <StackLayout>
+                    <DropDown #dd
+                        [selectedIndex]="defaultIndex"
+                        (selectedIndexChanged)="onchangeSubmitTo($event)"
+                        itemsTextAlignment="center"
+                        class="item-drop-down"
+                        hint="Submit to" >
+                    </DropDown>
+
+                </StackLayout>
+        </StackLayout>
+
+
+        <StackLayout>
+            <Button text="Approve"  class="btn btn-success" (tap)=submit() *ngIf="strMode=='E'"></Button>
+        </StackLayout>
+
+        <StackLayout >
+
+            <Button text="Reject"  class="btn btn-primary" (tap)="Reject()" *ngIf="strMode=='E'"></Button>
+        </StackLayout>
+
+
+
+
+
+        <StackLayout>
+            <Label text="WorkFLow History" class="input"></Label>
+        </StackLayout>
+
+        <ScrollView orientation="vertical">
+        <ListView [items]="LogHistory" class="list-group" height="80">
+            <ng-template let-item="item">
+                <GridLayout class="list-group-item" rows="auto" columns="*,*,*,*">
+
+                    <Label [text]="item.Status"  row="0" col="0" ></Label>
+                    <Label [text]="item.ProcessBy"  row="0" col="1"></Label>
+                    <Label [text]="item.ProcessOn | date:'dd/MMM/yyyy hh:mm'"  row="0" col="2" ></Label>
+                    <Label [text]="item.Submittedto"  row="0" col="3" ></Label>
+
+
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </ScrollView>
+
+
+
+        <StackLayout>
+            <ActivityIndicator busy="{{ isLoading }}" color="green" ></ActivityIndicator>
+
+        </StackLayout>
+
+      </FlexboxLayout>
+
+
+
+
+

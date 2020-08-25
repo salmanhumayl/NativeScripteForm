@@ -1,0 +1,63 @@
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
+-->
+<RadSideDrawer [drawerTransition]="sideDrawerTransition" >
+    <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content" >
+        <StackLayout row="0" class="nt-drawer__header"  *ngIf="_global.isvalid">
+            <Image class="nt-drawer__header-image fas t-36" src="{{_global.picturesrc}}"></Image>
+            <Label class="nt-drawer__header-brand" text={{_global.EmpName}}></Label>
+            <Label class="nt-drawer__header-footnote" text={{_global.Position}}></Label>
+            <Label class="nt-drawer__header-footnote" text={{_global.Project}}></Label>
+        </StackLayout>
+
+        <ScrollView row="1" class="nt-drawer__body"  *ngIf="_global.isvalid" >
+            <StackLayout   >
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/pendings')"  (tap)="onNavItemTap('/pendings')">
+                    <Label col="0" text="&#xf2cd;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Pending Approvals" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/reqinprogess')" (tap)="onNavItemTap('/reqinprogess')">
+                    <Label col="0" text="&#xf0c5;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Request In Progress" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/newleaveSO')" (tap)="onNavItemTap('/newleaveSO')">
+                    <Label col="0" text="&#xf1ea;" class="nt-icon far"></Label>
+                    <Label col="1" text="Support Office - Leave Request" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                    <Label col="0" text="&#xf236;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Project - Leave Request" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                    <Label col="0" text="&#xf0a3;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Support Office - Certificate Request" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                    <Label col="0" text="&#xf0a3;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Project - Certificate Request" class="p-r-10"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                    <Label col="0" text="&#xf1e5;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Joining Back From Leave" class="p-r-10"></Label>
+                </GridLayout>
+
+                <StackLayout class="hr"></StackLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/logout')" (tap)="onNavItemTap('/logout')">
+                    <Label col="0" text="&#xf013;" class="nt-icon fas"></Label>
+                    <Label col="1" text="Log Out" class="p-r-10"></Label>
+                </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+    <page-router-outlet tkMainContent></page-router-outlet>
+</RadSideDrawer>

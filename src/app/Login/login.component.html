@@ -1,0 +1,36 @@
+<Flexboxlayout class="page">
+    <StackLayout class="form">
+        <Image class="logo" src="http://portal.ajes.ae/epro/logo.png"></Image>
+        <Label class="header" text="e-Form"></Label>
+
+        <GridLayout rows="auto, auto">
+            <StackLayout row="0" class="input-field">
+                <TextField  class="input"
+                            [isEnabled]="!isLoading"
+                            hint="UserName"
+                            [(ngModel)]="Username"
+                            autocapitalizationType="none">
+                </TextField>
+                <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
+            <StackLayout row="1" class="input-field">
+                <TextField
+                [isEnabled]="!isLoading"
+                secure="True"
+                class="input"
+                hint="Password"
+                [(ngModel)]="Password"></TextField>
+                 <StackLayout class="hr-light"></StackLayout>
+            </StackLayout>
+            <ActivityIndicator [busy]=isLoading rowSpan="2" color="green" ></ActivityIndicator>
+        </GridLayout>
+
+            <Button text="Login" [isEnabled]="!isLoading" (tap)="ValidateUser()"
+                class="btn btn-primary m-t-20"></Button>
+            <Label text={{error}}></Label>
+
+
+    </StackLayout>
+
+</Flexboxlayout>
+
