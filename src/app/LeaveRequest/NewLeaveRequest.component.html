@@ -34,8 +34,11 @@
                     <Label text="Leave From" row="0" col="0"  class="leaves"></Label>
 
                     <TextField editable="false"
-                    #tleavefrom
+                    required
                     [(ngModel)]="LeaveFrom"
+                    #tleavefrom
+                    #tleavefromModel="ngModel"
+
                     (tap)="LeaveFromPickDate()"
                     row="0" col="1"></TextField>
 
@@ -96,7 +99,9 @@
   >
             </DropDown>
 
-         <button text="Submit" [isEnabled]="!isLoading"  class="btn btn-primary" (tap)="SaveLeave()"></button>
+         <Button text="Submit"  [visibilty]="tleavefromModel.valid ? 'visible' :'collapse'"
+
+          class="btn btn-primary" (tap)="SaveLeave()"></Button>
 
 </StackLayout>
 
