@@ -70,7 +70,6 @@
 
             <Button text="Choose Leave Certificate to upload" (tap)="onSelectIamgeTap()"></Button>
             <Image src="{{certificate}}" class="nt-drawer__header-image fas t-36"></Image>
-            <Label [text]=uploading></Label>
 
             <TextField  class="Header" hint="Travel Detail-From" [(ngModel)]="FromDate"></TextField>
             <TextField  #TraveDetailToTextField  class="Header" hint="Travel Detail-To" [(ngModel)]="ToDate"></TextField>
@@ -88,20 +87,30 @@
 
             </GridLayout>
 
-            <DropDown #approver
 
-            [selectedIndex]="defaultIndex"
-            (selectedIndexChanged)="onchangeSubmitTo($event)"
-            backroundColor="red"
-            itemsTextAlignment="center"
-            class="item-drop-down"
-            hint="Submit to"
-  >
-            </DropDown>
+            <GridLayout columns="*" rows="auto,*" height="80">
+                <Label text="Submit to" row="0" col="0" class="Header"></Label>
 
-         <Button text="Submit"  [visibility]="tleavefrom.valid ? 'visible' :'collapse'"
-            [isEnabled]="!isLoading"
-          class="btn btn-primary" (tap)="SaveLeave()"></Button>
+                <DropDown #approver
+
+                [selectedIndex]="defaultIndex"
+                (selectedIndexChanged)="onchangeSubmitTo($event)"
+                backroundColor="red"
+                itemsTextAlignment="center"
+                class="item-drop-down"
+                hint="Submit to"
+                row="1"
+                col="0"></DropDown>
+
+
+
+            </GridLayout>
+
+            <StackLayout>
+                <Button text="Submit"  [visibility]="tleavefrom.valid ? 'visible' :'collapse'"
+                    [isEnabled]="!isLoading"
+                    class="btn btn-primary" (tap)="SaveLeave()"></Button>
+            </StackLayout>
 
 </StackLayout>
 
