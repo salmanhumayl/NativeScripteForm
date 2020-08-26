@@ -27,6 +27,7 @@
     "nativescript-angular": "~8.21.0",
     "nativescript-background-http": "^4.2.1",
     "nativescript-drop-down": "^5.0.6",
+    "nativescript-handle-file": "^4.0.0",
     "nativescript-imagepicker": "^7.1.0",
     "nativescript-modal-datetimepicker": "^1.2.2",
     "nativescript-pdf-view": "^2.4.3",
