@@ -19,6 +19,8 @@ import { mergeMap } from "rxjs/operators";
 import {TokenParams} from "../models/TokenParams";
 import { LogHistoryModel } from "../models/LogHistoryModel";
 
+
+
 @Component({
     selector: "ns-details",
     templateUrl: "./ViewLeaveRequest.component.html",
@@ -27,6 +29,7 @@ import { LogHistoryModel } from "../models/LogHistoryModel";
 })
 
 export class ViewLeaveRequestComponent{
+
 
     //item: Item;
     RefNo:string;

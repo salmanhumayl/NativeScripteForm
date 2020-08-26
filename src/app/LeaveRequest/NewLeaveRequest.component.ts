@@ -33,6 +33,7 @@ import {ImageSource} from "tns-core-modules/image-source"
 import * as bgHttp from "nativescript-background-http";
 import { of, timer, interval, BehaviorSubject, Observable } from 'rxjs';
 
+
 @Component({
 
     selector: "ns-nleave",
@@ -43,6 +44,8 @@ import { of, timer, interval, BehaviorSubject, Observable } from 'rxjs';
 })
 
 export class NewLeaveRequestComponent implements OnInit{
+
+
     event = new BehaviorSubject<any>({});
     currentFileNameBeingUploaded:string;
     tempFilePath:string;

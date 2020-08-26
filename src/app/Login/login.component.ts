@@ -24,6 +24,7 @@ export class LoginComponent  implements OnInit {
     loginmodel:LoginViewModel=new LoginViewModel();
     Username:string="smazhar";
     Password:string="marina123@@";
+    pdfSrc:string="http://portal.ajes.ae/eFormServices/test.pdf";
 
     retval :boolean;
     isLoading = false;
@@ -90,5 +91,7 @@ export class LoginComponent  implements OnInit {
 
     }
 
-
+    public onLoad() {
+        alert('Loaded PDF!');
+      }
 }

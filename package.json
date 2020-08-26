@@ -29,6 +29,7 @@
     "nativescript-drop-down": "^5.0.6",
     "nativescript-imagepicker": "^7.1.0",
     "nativescript-modal-datetimepicker": "^1.2.2",
+    "nativescript-pdf-view": "^2.4.3",
     "nativescript-secure-storage": "^2.6.1",
     "nativescript-ui-sidedrawer": "~8.0.0",
     "reflect-metadata": "~0.1.12",
