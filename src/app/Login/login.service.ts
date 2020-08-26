@@ -25,6 +25,9 @@ export class LoginService {
 
     constructor(private http: HttpClient) { }
 
+
+
+
     getData() {
         let headers = this.createRequestHeader();
         return this.http.get(this.serverUrl, { headers: headers });
@@ -94,6 +97,7 @@ export class LoginService {
 
     GetNextLevelAuthority(DocID:Number,Status:number){
         let valueItems=[];
+
        return this.http.get<UserDetail[]>(this.serverUrl + '/api/LeaveRequest/GetNextLevelAuthority?DocID=' + DocID+'&Status='+Status)
         .pipe(map(data=>{
             if (data!=null){

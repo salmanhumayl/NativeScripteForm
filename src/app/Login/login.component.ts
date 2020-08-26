@@ -13,6 +13,13 @@ import { AppGlobals } from '../../app.global';
 import {Page} from 'tns-core-modules/ui/page';
 import * as application from "tns-core-modules/platform";
 
+
+import { PDFView } from 'nativescript-pdf-view';
+import { registerElement } from 'nativescript-angular';
+registerElement('PDFView', () => PDFView);
+
+
+
 @Component({
    selector: "login",
    templateUrl: "./login.component.html",
@@ -24,7 +31,7 @@ export class LoginComponent  implements OnInit {
     loginmodel:LoginViewModel=new LoginViewModel();
     Username:string="smazhar";
     Password:string="marina123@@";
-    pdfSrc:string="http://portal.ajes.ae/eFormServices/test.pdf";
+    pdfSrc:string="";
 
     retval :boolean;
     isLoading = false;
@@ -94,4 +101,14 @@ export class LoginComponent  implements OnInit {
     public onLoad() {
         alert('Loaded PDF!');
       }
+      changePDF(){
+
+        this.pdfSrc="http://portal.ajes.ae/eformservices/api/LeaveRequest/ReturnLeaveRequest?RecordID=936";
+
+
+      }
+
+
+
+
 }
