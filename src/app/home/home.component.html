@@ -1,10 +1,10 @@
 <ActionBar>
-    <!-- 
+    <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
+    <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
@@ -15,7 +15,23 @@
     <Label text="Home"></Label>
 </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon fas" text="&#xf015;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<StackLayout class="form">
+
+    <StackLayout>
+        <Label text="eForm Mobile Service"  class="caption"></Label>
+    </StackLayout>
+
+    <GridLayout rows="auto" columns="auto,auto,auto" class="gridlayout">
+        <Image
+          row="0" col="0"
+         (Tap)="onItemTap($event)" class="pic"></Image>
+
+        <Image row="0" col="1" class="pic"></Image>
+
+        <Image class="pic" row="0" col="2"></Image>
+
+
+
+    </GridLayout>
+
+</StackLayout>
