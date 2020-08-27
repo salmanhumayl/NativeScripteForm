@@ -18,7 +18,6 @@ import { PDFView } from 'nativescript-pdf-view';
 import { registerElement } from 'nativescript-angular';
 registerElement('PDFView', () => PDFView);
 
-import {HandleFile} from 'nativescript-handle-file';
 
 @Component({
    selector: "login",
@@ -28,7 +27,7 @@ import {HandleFile} from 'nativescript-handle-file';
 })
 
 export class LoginComponent  implements OnInit {
-    handleFile: HandleFile;
+
     loginmodel:LoginViewModel=new LoginViewModel();
     Username:string="smazhar";
     Password:string="marina123@@";
@@ -44,7 +43,7 @@ export class LoginComponent  implements OnInit {
     }
     ngOnInit(): void {
         // Init your component properties here.
-        this.handleFile = new HandleFile();
+
         this.page.actionBarHidden=true;
 
 
@@ -110,15 +109,6 @@ export class LoginComponent  implements OnInit {
 
       }
 
-     checkPdf(event: EventData) {
-        alert("CCC");
-        this.handleFile.open({
-            name: "PDF-example.pdf",
-            url: "http://portal.ajes.ae/eformservices/api/LeaveRequest/ReturnLeaveRequest?RecordID=936",
-            title: "Teste de download",
-            directory: "downloads"
-        })
-    }
 
 
 }
