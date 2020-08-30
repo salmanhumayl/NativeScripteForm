@@ -20,11 +20,15 @@
 
     <ListView [items]="pendings" class="list-group" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
-            <GridLayout class="list-group-item" rows="auto,auto" columns="50,*">
-                <Image class="logo" row="0" col="0" rowspan="2" src="http://portal.ajes.ae/epro/logo.png"></Image>
+            <GridLayout class="list-group-item" rows="auto,auto,auto" columns="50,*">
+                <Image class="logo" row="0" col="0" rowspan="3" src="http://portal.ajes.ae/epro/logo.png"></Image>
 
                 <Label [text]="item.RefNo" class="input" row="0" col="1" class="input"></Label>
                 <Label [text]="item.Name" class="input" row="1" col="1" class="inputList"></Label>
+                <Label [text]="item.Name" class="input" row="2" col="1" class="inputList"></Label>
+
+                <Button row="3" col="1"  class="btn -primary" text="View" (tap)="ViewPDF()"></Button>
+
 
             </GridLayout>
         </ng-template>

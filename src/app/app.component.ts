@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
         application.android.on(application.AndroidApplication.activityBackPressedEvent, (args: any) => {
 
-            if (this.router.url=="/pendings") {
+            if (this.router.url=="/home") {
                 args.cancel = true;
                     confirm({
                         title: "AJES-eForm",

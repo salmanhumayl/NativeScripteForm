@@ -14,9 +14,6 @@ import {Page, EventData} from 'tns-core-modules/ui/page';
 import * as application from "tns-core-modules/platform";
 
 
-import { PDFView } from 'nativescript-pdf-view';
-import { registerElement } from 'nativescript-angular';
-registerElement('PDFView', () => PDFView);
 
 
 @Component({
@@ -31,7 +28,7 @@ export class LoginComponent  implements OnInit {
     loginmodel:LoginViewModel=new LoginViewModel();
     Username:string="smazhar";
     Password:string="marina123@@";
-    pdfSrc:string="";
+
 
     retval :boolean;
     isLoading = false;
@@ -78,7 +75,7 @@ export class LoginComponent  implements OnInit {
                     this._global.JoiningDate=response.JoiningDate;
                     this._global.ForemanCode=response.ForemanCode;
                     this.isLoading = false;
-                    this.routerExt.navigate(["/pendings"], { clearHistory: true });
+                    this.routerExt.navigate(["/home"], { clearHistory: true });
                 }
                 else
                 {
@@ -99,15 +96,7 @@ export class LoginComponent  implements OnInit {
 
     }
 
-    public onLoad() {
-        alert('Loaded PDF!');
-      }
-      changePDF(){
 
-        this.pdfSrc="http://portal.ajes.ae/eformservices/api/LeaveRequest/ReturnLeaveRequest?RecordID=936";
-
-
-      }
 
 
 

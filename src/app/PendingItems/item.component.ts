@@ -66,6 +66,12 @@ import {TokenParams} from "../models/TokenParams";
 
     }
 
+    ViewPDF(){
+
+        this.routerExt.navigate(["/viewdocument"]);
+
+    }
+
 }
 
 
