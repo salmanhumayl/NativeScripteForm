@@ -3,7 +3,7 @@
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton title="dsdsad" android.systemIcon="ic_menu_back" (tap)="goBack()" ></NavigationButton>
+    <NavigationButton  android.systemIcon="ic_menu_back" (tap)="goBack()" ></NavigationButton>
 
    <!--  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     --> <!--
@@ -14,13 +14,21 @@
     <!-- <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem> -->
-    <Label  ></Label>
+    <Label ></Label>
 
 </ActionBar>
 
+<GridLayout class="page">
 
  <GridLayout columns="*" rows="*" height="600" class="form">
 
-       <PDFView row="0" col="0" (load)="onLoad()" [src]="pdfSrc"></PDFView>
+       <PDFView row="0" col="0"  [src]="pdfSrc"></PDFView>
+
+
+       <StackLayout>
+        <ActivityIndicator busy="{{ isWaiting }}" color="red" ></ActivityIndicator>
+    </StackLayout>
+
    </GridLayout>
 
+</GridLayout>

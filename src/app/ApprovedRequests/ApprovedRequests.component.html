@@ -12,19 +12,21 @@
     <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="Pending Approvals"></Label>
+    <Label text="Approved Requests"></Label>
 </ActionBar>
 
 
 <GridLayout class="page">
 
-    <ListView [items]="pendings" class="list-group" (itemTap)="onItemTap($event)">
+    <ListView [items]="pendings" class="list-group" >
         <ng-template let-item="item">
-            <GridLayout class="list-group-item" rows="auto,auto" columns="50,*">
-                <Image class="logo" row="0" col="0" rowspan="2" src="http://portal.ajes.ae/epro/logo.png"></Image>
+            <GridLayout class="list-group-item" rows="auto,auto,auto" columns="50,*">
+                <Image class="logo" row="0" col="0" rowspan="3" src="http://portal.ajes.ae/epro/logo.png"></Image>
 
                 <Label [text]="item.RefNo" class="input" row="0" col="1" class="input"></Label>
                 <Label [text]="item.Name" class="input" row="1" col="1" class="inputList"></Label>
+
+                <Button row="2" col="1"  class="btn-primary-remindar" text="View" (tap)="ViewPDF(item.TransactionID)"></Button>
 
 
             </GridLayout>

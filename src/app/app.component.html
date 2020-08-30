@@ -14,6 +14,12 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
         <ScrollView row="1" class="nt-drawer__body"  *ngIf="_global.isvalid" >
             <StackLayout   >
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
+                    <Label col="0" text="&#xf0a3;" class="nt-icon fas"></Label>
+                    <Label col="1" text="DashBaord" class="p-r-10"></Label>
+                </GridLayout>
+
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/pendings')"  (tap)="onNavItemTap('/pendings')">
                     <Label col="0" text="&#xf2cd;" class="nt-icon fas"></Label>
                     <Label col="1" text="Pending Approvals" class="p-r-10"></Label>
@@ -34,10 +40,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="Project - Leave Request" class="p-r-10"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
-                    <Label col="0" text="&#xf0a3;" class="nt-icon fas"></Label>
-                    <Label col="1" text="DashBaord" class="p-r-10"></Label>
-                </GridLayout>
+
 
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
                     <Label col="0" text="&#xf0a3;" class="nt-icon fas"></Label>

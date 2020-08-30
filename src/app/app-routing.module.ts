@@ -17,7 +17,8 @@ const routes: Routes = [
     { path: "search", loadChildren: () => import("~/app/search/search.module").then((m) => m.SearchModule) },
     { path: "featured", loadChildren: () => import("~/app/featured/featured.module").then((m) => m.FeaturedModule) },
     { path: "settings", loadChildren: () => import("~/app/settings/settings.module").then((m) => m.SettingsModule) },
-    { path: "viewdocument", loadChildren: () => import("~/app/ViewDocuments/viewdocument.module").then((m) => m.ViewDocumentModule) }
+    { path: "approvedrequest", loadChildren: () => import("~/app/ApprovedRequests/ApprovedRequests.module").then((m) => m.ApprovedRequestsModule)},
+    { path: "viewdocument/:id", loadChildren: () => import("~/app/ViewDocuments/viewdocument.module").then((m) => m.ViewDocumentModule) }
 ];
 
 @NgModule({

@@ -82,6 +82,15 @@ export class LoginService {
 
 
     }
+    ApprovedRequest(UserName:string):Observable<PendingApproval[]>
+    {
+
+        return this.http.get<PendingApproval[]>(`${this.serverUrl +'/api/Dashboard/ApprovedRequest?UserName='}${UserName}`);
+
+
+    }
+
+
 
 
     ViewLeaveRequest(TransactionID:Number):Observable<LeaveRequest>{
