@@ -1,4 +1,5 @@
-import { Component,OnInit, } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+
 import { ActivatedRoute, Router } from "@angular/router";
 import {RouterExtensions} from "@nativescript/angular/router";
 
@@ -12,7 +13,7 @@ import {TokenParams} from "../models/TokenParams";
 
 
 @Component({
-    selector: "ajesRequestInProgress",
+    selector: "RequestInProgress",
     templateUrl: "./RequestInProgress.component.html",
     styleUrls: ['RequestInProgress.component.css'],
     providers:[LoginService]
@@ -32,6 +33,7 @@ import {TokenParams} from "../models/TokenParams";
 ) { }
 
     ngOnInit(): void {
+        alert("333213");
         this.isWaiting=true;
         TokenParams.secureStorage.get({
             key: "username"

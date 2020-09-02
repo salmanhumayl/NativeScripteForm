@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
 
     onItemTap(arg)
     {
-        this.routerExt.navigate(["/reqinprogess"], { clearHistory: false });
+        this.routerExt.navigate(["/approvedrequest"], { clearHistory: false });
 
     }
 }
