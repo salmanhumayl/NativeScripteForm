@@ -14,7 +14,7 @@
     <!-- <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem> -->
-    <Label ></Label>
+    <Label text={{Heading}}  ></Label>
 
 </ActionBar>
 
@@ -22,7 +22,7 @@
 
  <GridLayout columns="*" rows="*" height="600" class="form">
 
-       <PDFView row="0" col="0"  [src]="pdfSrc"></PDFView>
+       <PDFView row="0" col="0"  [src]="pdfSrc" (load)="onLoad()" ></PDFView>
 
 
        <StackLayout>

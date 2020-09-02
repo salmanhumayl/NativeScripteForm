@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component,OnInit, } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import {RouterExtensions} from "@nativescript/angular/router";
 
@@ -12,7 +12,7 @@ import {TokenParams} from "../models/TokenParams";
 
 
 @Component({
-    selector: "login",
+    selector: "ajesRequestInProgress",
     templateUrl: "./RequestInProgress.component.html",
     styleUrls: ['RequestInProgress.component.css'],
     providers:[LoginService]
@@ -38,6 +38,7 @@ import {TokenParams} from "../models/TokenParams";
           }).then(value => {
 
             this.mUserName=value;
+            alert(this.mUserName);
             this._LoginService.RequestInProgress(this.mUserName).subscribe(
                 (response)=>{
                         this.pendings=response

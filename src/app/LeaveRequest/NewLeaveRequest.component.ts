@@ -104,11 +104,11 @@ export class NewLeaveRequestComponent implements OnInit{
 
     ngOnInit():void{
 
-        this.logDirectory = knownFolders.documents().getFolder("logs");
+       /*  this.logDirectory = knownFolders.documents().getFolder("logs");
         Array.from(Array(10).keys()).forEach((i) => {
             const logFile = this.logDirectory.getFile(`log_${i}.log`);
             logFile.writeTextSync("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy");
-        });
+        }); */
 
 
 

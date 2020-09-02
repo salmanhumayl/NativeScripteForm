@@ -11,6 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { AppGlobals } from '../app.global';
 
+import { RequestInProgressComponent } from "../app/RequestInProgress/RequestInProgress.component";
 
 @NgModule({
     providers: [AppGlobals],
@@ -27,7 +28,8 @@ import { AppGlobals } from '../app.global';
         DropDownModule
     ],
     declarations: [
-        AppComponent
+        AppComponent,
+        RequestInProgressComponent
 
     ],
     schemas: [

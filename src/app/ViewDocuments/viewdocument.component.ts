@@ -19,6 +19,7 @@ registerElement('PDFView', () => PDFView);
 export class ViewDocumentComponent implements OnInit{
     pdfSrc:string="";
     TransactionID:number;
+    Heading :string;
     isWaiting:boolean=false;
 
     constructor(
@@ -30,14 +31,19 @@ export class ViewDocumentComponent implements OnInit{
     ngOnInit():void{
         this.isWaiting=true;
         this.TransactionID = +this.route.snapshot.params.id;
-         this.pdfSrc="http://portal.ajes.ae/eformservices/api/LeaveRequest/ReturnLeaveRequest?RecordID=" + this.TransactionID;
-         this.isWaiting=false;
+        this.Heading="FRM120-TRN" + this.TransactionID;
+
+        this.pdfSrc="http://portal.ajes.ae/eformservices/api/LeaveRequest/ReturnLeaveRequest?RecordID=" + this.TransactionID;
+
     }
 
 
       goBack(){
 
         this.routerExt.back();
+    }
+    onLoad(){
+        this.isWaiting=false;
     }
 
 }
