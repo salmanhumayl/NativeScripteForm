@@ -33,14 +33,14 @@ import {TokenParams} from "../models/TokenParams";
 ) { }
 
     ngOnInit(): void {
-        alert("333213");
+
         this.isWaiting=true;
         TokenParams.secureStorage.get({
             key: "username"
           }).then(value => {
 
             this.mUserName=value;
-            alert(this.mUserName);
+
             this._LoginService.RequestInProgress(this.mUserName).subscribe(
                 (response)=>{
                         this.pendings=response
